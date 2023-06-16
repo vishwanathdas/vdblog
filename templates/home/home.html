@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %} VdBlog | Home
+    
+{% endblock title %}
+
+{% block homeactive %} active
+    
+{% endblock homeactive %}
+
+{% block body %}
+
+<section class="jumbotron text-center text-dark">
+    <div class="container">
+            <a href="/blog" class="btn btn-danger my-2">Blog</a>
+            <a href="/course" class="btn btn-success my-2">Primium Course </a>
+            <a href="/contact" class="btn btn-primary my-2">Contact Me</a>
+        </p>
+    </div>
+</section>
+
+
+
+    <div class="container">
+        <h1 class="m-2">Latest Course</h1>
+        <hr>
+      <div class="row">
+        {% for post in allPost %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="{{post.img.url}}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="{{post.img.url}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect></img>
+            <div class="card-body">
+              <p class="card-text">{{post.content | safe | truncatechars:150}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a class="btn btn-sm btn-outline-secondary" href="course/{{post.slug}}">View</a>
+                </div>
+                <small class="text-muted">{{post.time}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+      </div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+<script>
+    window.onload = function () {
+        console.log("loaded")
+        var typed = new Typed('#typed', {
+            strings: ["Welcome to ShikshaGo", "Apps Development",  "Web Development", "Compitition Course", "Digital Marketing", "Hacking Course" , "Get Free Education Through Our Certificate" , "And Other Awesome Course With Shikshago.com"],
+            backSpeed: 15,
+            smartBackspace: true,
+            backDelay: 1200,
+            startDelay: 1000,
+            typeSpeed: 25,
+            loop: true,
+        });
+    };
+</script>
+    
+{% endblock body %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %} VdBlog | Post
+    
+{% endblock title %}
+{% block courseactive %}active
+    
+{% endblock courseactive %}
+
+{% block body %}
+   
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-italic border-bottom">
+        Buy Best Course From VdBlog
+      </h3>
+
+      <div class="blog-post">
+        <img src="{{post.img.url}}" class="card-img-top" alt="{{post.title}">
+        
+        <h2 class="blog-post-title">{{post.title}}</h2>
+        
+        <p class="my-2 blog-post-meta">{{post.time}} ,by <a href="/about">{{post.author}}</a></p>
+
+        <p>{{post.content |safe}}
+       
+      </div><!-- /.blog-post -->
+
+
+      
+
+      <nav class="blog-pagination">
+        <a class="btn btn-outline-primary" href="#">Older</a>
+        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+      </nav>
+
+    </div><!-- /.blog-main -->
+
+    <aside class="dk col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-italic">About</h4>
+        <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+      </div>
+
+
+
+      <div class="p-4">
+        <h4 class="font-italic">Follow Us</h4>
+        <ol class="list-unstyled">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ol>
+      </div>
+    </aside><!-- /.blog-sidebar -->
+
+  </div><!-- /.row -->
+
+</main>
+    
+{% endblock body %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} Blog
+    
+{% endblock title %}
+{% block blogactive %}active
+    
+{% endblock blogactive %}
+
+{% block body %}
+   <div class="container">
+   	<h1 class="m-2">Blog</h1>
+    <div class="row mb-2">
+{% for post in allPost %}
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">	
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{post.author}}</strong>
+          <h3 class="mb-0">{{post.title}}</h3>
+          <div class="mb-1 text-muted">{{post.time}}</div>
+          <p class="card-text mb-auto">{{post.content | truncatechars:200 |safe }}</p>
+          <a href="{{post.slug}}" class="stretched-link">Continue reading</a>
+        </div>
+        </div>
+      </div> 
+      {% endfor %}
+    </div>
+  </div>
+{% endblock body %}
