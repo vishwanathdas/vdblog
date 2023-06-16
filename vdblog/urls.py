@@ -4,8 +4,8 @@ from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
 
-admin.site.site_header = "ShikshaGo"
-admin.site.site_title = "ShikshaGo Admin Panel"
+admin.site.site_header = "Vdblog"
+admin.site.site_title = "Vdblog Admin Panel"
 
 
 
